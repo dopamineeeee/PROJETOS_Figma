@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Dopa's Bike - Orçamento</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background: linear-gradient(135deg,#000,#3a2a1d);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.container{
+background:white;
+padding:30px;
+width:420px;
+border-radius:12px;
+box-shadow:0px 10px 30px rgba(0,0,0,0.3);
+}
+
+.logo{
+text-align:center;
+font-size:24px;
+font-weight:bold;
+margin-bottom:5px;
+}
+
+.sub{
+text-align:center;
+font-size:14px;
+color:gray;
+margin-bottom:20px;
+}
+
+label{
+font-weight:bold;
+font-size:14px;
+}
+
+input, textarea{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:15px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
+}
+
+textarea{
+height:90px;
+resize:none;
+}
+
+.preview{
+width:100%;
+height:150px;
+border:2px dashed #ccc;
+border-radius:8px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:15px;
+overflow:hidden;
+}
+
+.preview img{
+width:100%;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#000;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#5c3a21;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">🚲 Dopa's Bike</div>
+<div class="sub">Sistema de Orçamento de Bicicletas</div>
+
+<form>
+
+<label>Nome do cliente</label>
+<input type="text">
+
+<label>Telefone / WhatsApp</label>
+<input type="tel">
+
+<label>Descrição do problema</label>
+<textarea></textarea>
+
+<label>Foto da bicicleta</label>
+
+<div class="preview" id="preview">
+<span>Prévia da imagem</span>
+</div>
+
+<input type="file" accept="image/*" onchange="mostrarImagem(event)">
+
+<label>Data do orçamento</label>
+<input type="date" id="dataOrcamento">
+
+<button type="button" onclick="irParaBusca()">Enviar Orçamento</button>
+
+</form>
+
+</div>
+
+<script>
+
+function mostrarImagem(event){
+
+const preview = document.getElementById("preview")
+
+preview.innerHTML = ""
+
+const img = document.createElement("img")
+
+img.src = URL.createObjectURL(event.target.files[0])
+
+preview.appendChild(img)
+
+}
+
+function irParaBusca(){
+
+const data = document.getElementById("dataOrcamento").value
+
+window.location.href = "buscar-cep.html?data=" + data
+
+}
+
+</script>
+
+</body>
+</html>
