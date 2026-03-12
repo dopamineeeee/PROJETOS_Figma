@@ -1,5 +1,7 @@
 const form = document.getElementById("loginForm")
 
+if(form){
+
 form.addEventListener("submit", function(event){
 
 event.preventDefault()
@@ -17,7 +19,7 @@ if(email === emailCorreto && senha === senhaCorreta){
 mensagem.innerText = "Login realizado com sucesso!"
 mensagem.style.color = "green"
 
-window.location.href = "orcamento.html";
+window.location.href = "orcamento.html"
 
 }else{
 
@@ -27,6 +29,8 @@ mensagem.style.color = "red"
 }
 
 })
+
+}
 
 function irParaBusca(){
 
@@ -40,4 +44,12 @@ const parametros = new URLSearchParams(window.location.search)
 
 const data = parametros.get("data")
 
-document.getElementById("dataRecebida").innerText = data
+const campoData = document.getElementById("dataRecebida")
+
+if(campoData){
+campoData.innerText = data
+}
+
+function irParaAvaliacao(){
+window.location.href = "avaliacao.html"
+}
