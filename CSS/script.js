@@ -9,7 +9,7 @@ event.preventDefault()
 const email = document.getElementById("email").value
 const senha = document.getElementById("senha").value
 
-const emailCorreto = "admin@email.com"
+const emailCorreto = "admin@hotmail.com"
 const senhaCorreta = "123456"
 
 const mensagem = document.getElementById("mensagem")
